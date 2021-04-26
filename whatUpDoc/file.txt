@@ -1,0 +1,4 @@
+Type: BMI	Date: 2021.05.26	Value: 20.5
+Type: BP	Date: 2021.05.26	Systolic value: 20	Diastolic value: 18
+Type: BMI	Date: 2021.12.26	Value: 14.9
+Type: BP	Date: 2021.11.26	Systolic value: 19	Diastolic value: 20
