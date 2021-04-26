@@ -1,5 +1,6 @@
 #include "Person.h"
 #include "Measurement.h"
+#include <fstream>
 
 Person::Person(std::string _name) : name{_name}
 {
@@ -22,7 +23,7 @@ void Person::add5Measurements()
 	Measurement* m2 = new BMI("2021.05.26", 20.5);
 	Measurement* m3 = new BP("2021.05.26", 20, 18);
 	Measurement* m4 = new BMI("2021.12.26", 14.9);
-	Measurement* m5 = new BP("2021.11.26", 19, 20);
+	Measurement* m5 = new BP("2021.01.26", 95, 65);
 
 	this->addMeasurement(m1);
 	this->addMeasurement(m2);
@@ -97,4 +98,10 @@ std::vector<Measurement*> Person::getMeasurementsNewerThan(std::string date)
 
 void Person::writeToFile(std::string filename, std::string date)
 {
+	filename += ".txt";
+
+	std::ofstream fout(filename);
+
+	for (auto m : this->getMeasurementsNewerThan(date))
+		fout << m->toString() << '\n';
 }
